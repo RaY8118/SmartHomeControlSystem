@@ -1,6 +1,6 @@
 // src/firebase-config.js
 import { initializeApp } from "firebase/app";
-import { getDatabase } from "firebase/database";
+import { getDatabase, ref, set, get } from "firebase/database";
 import config from "../config.json";
 
 
@@ -8,4 +8,4 @@ import config from "../config.json";
 const app = initializeApp(config);
 const db = getDatabase(app);
 
-export { db };
+export { db, ref, set, get };

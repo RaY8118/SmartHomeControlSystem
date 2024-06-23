@@ -14,4 +14,15 @@ function writeRelayData(relayId, state) {
         });
 }
 
-export default writeRelayData;
+
+function writeFormData(formData) {
+    set(ref(db, 'formValues'), formData)
+        .then(() => {
+            console.log('Form data saved successfully!');
+        })
+        .catch((error) => {
+            console.error('Error saving form data: ', error);
+        });
+}
+
+export { writeFormData, writeRelayData }
