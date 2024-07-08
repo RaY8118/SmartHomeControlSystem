@@ -2,27 +2,36 @@
 import { getDatabase, ref, set } from "firebase/database";
 import { db } from "./firebase";
 
-function writeRelayData(relayId, state) {
-    set(ref(db, 'relays/' + relayId), {
-        state: state
-    })
-        .then(() => {
-            console.log('Data saved successfully!');
+
+const writeRelayData = (relayId, state) => {
+    try {
+        set(ref(db, 'relays/' + relayId), {
+            state: state
         })
-        .catch((error) => {
-            console.error('Error saving data: ', error);
-        });
+        console.log("Data saved Successfully")
+    } catch (error) {
+        console.log("Some error occured", error)
+    }
 }
 
-
-function writeFormData(formData) {
-    set(ref(db, 'formValues'), formData)
-        .then(() => {
-            console.log('Form data saved successfully!');
-        })
-        .catch((error) => {
-            console.error('Error saving form data: ', error);
-        });
+const writeFormData = (formData) => {
+    try {
+        set(ref(db, 'formValues'), formData)
+        console.log("Form Data saved succcessfully")
+    }
+    catch (error) {
+        console.log("Error saving the form data", error)
+    }
 }
 
-export { writeFormData, writeRelayData }
+const wifiData = async ({ ssid, password }) => {
+    try {
+        await set(ref(db, 'wifi/'), { ssid, password });
+        console.log("Data saved successfully");
+    } catch (error) {
+        console.log("Some error occurred", error);
+    }
+};
+
+
+export { writeFormData, writeRelayData, wifiData }

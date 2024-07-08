@@ -1,12 +1,11 @@
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f5f5f5;
+  font-family: cursive;
+  background-color: #00b4d8;
   margin: 0;
   padding: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
 }
 
 h1 {
@@ -26,7 +25,7 @@ button {
   width: 100%;
   padding: 10px;
   margin: 5px 0;
-  background-color: #007bff;
+  background-color: #0077b6;
   border: none;
   border-radius: 4px;
   color: white;
@@ -38,7 +37,7 @@ button:hover {
 }
 
 .container {
-  background-color: white;
+  background-color: #caf0f8;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -52,7 +51,14 @@ form {
   grid-template-columns: 1fr 1fr;
   gap: 20px;
 }
+.container label {
+  color: black;
+}
 
+.container input {
+  color: black;
+  background-color: lightblue;
+}
 .btn-primary {
   grid-column: 1 / -1;
   background-color: #007bff;
@@ -103,28 +109,28 @@ form {
 }
 
 .Buttons header {
-  background-color: #282c34;
+  background-color: #caf0f8;
   padding: 20px;
   border-radius: 8px;
   color: white;
 }
 
 .Buttons h1 {
-  color: white;
+  color: black;
   margin-bottom: 20px;
 }
 
 .Buttons label {
   display: block;
   margin-bottom: 10px;
-  color: white;
+  color: black;
 }
 
 .Buttons button {
   width: 100px;
   height: 40px;
   margin: 5px;
-  background-color: #007bff;
+  background-color: #0077b6;
   border: none;
   border-radius: 4px;
   color: white;
@@ -146,4 +152,37 @@ form {
 
 .ParentComponent .container {
   margin-top: 20px;
+}
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.sidebar {
+  position: fixed;
+  width: 120px;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  height: 85%;
+  align-items: center;
+  color: #fff;
+  padding: 70px 0;
+  background-color: #03045e;
+  border-radius: 0 25px 15px 20px;
+}
+.sidebar svg {
+  width: 50px;
+  height: 50px;
+  font-size: 34px;
+}
+.sidebar svg:hover {
+  background: #fff;
+  color: darkblue;
+  border-radius: 8px;
+  transition: 0.3s;
+  cursor: pointer;
 }
